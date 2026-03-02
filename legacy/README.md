@@ -26,3 +26,6 @@ Each program can be run independently by selecting the corresponding program num
 - Name: Nishanth K J
 - USN: 4MH21CS065
 - Faculty Name: Victor Ikechukwu Agughasi
+
+
+Note: This repository began as a college assignment. The original code is maintained as legacy code, while the current version has been redesigned with improved architecture, scalability, and real-world usability.
