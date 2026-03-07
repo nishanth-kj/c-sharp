@@ -1,0 +1,18 @@
+@using site.Models
+
+<footer>
+    <div class="container footer-inner">
+        <div class="footer-brand">⚡ @Config.AppName</div>
+        <p>@Config.FooterText</p>
+        <div class="footer-links">
+            <a href="@Config.GithubUrl">GitHub</a>
+            <a href="@Config.DocsUrl">Docs</a>
+            <a href="@Config.ChangelogUrl">Changelog</a>
+            <a href="@Config.LicenseUrl">License</a>
+        </div>
+    </div>
+</footer>
+
+@code {
+    [Parameter] public SiteConfig Config { get; set; } = new();
+}

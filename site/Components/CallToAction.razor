@@ -1,0 +1,15 @@
+@using site.Models
+
+<section class="cta">
+    <div class="container">
+        <h2>@Config.CtaTitle</h2>
+        <p>@Config.CtaSubtitle</p>
+        <div class="hero-buttons">
+            <a href="@Config.GithubUrl" class="btn btn-primary btn-lg" target="_blank">⭐ Star on GitHub</a>
+        </div>
+    </div>
+</section>
+
+@code {
+    [Parameter] public SiteConfig Config { get; set; } = new();
+}

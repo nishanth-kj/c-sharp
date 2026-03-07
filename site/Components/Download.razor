@@ -1,0 +1,80 @@
+@using site.Models
+
+<section class="section" id="download">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Download</span>
+            <h2>Get @AppName</h2>
+        </div>
+        <div class="download-card">
+            @if (IsLoading)
+            {
+                <div class="download-loading">
+                    <div class="spinner"></div>
+                    <p>Loading latest release from GitHub...</p>
+                </div>
+            }
+            else if (LatestRelease != null)
+            {
+                <div class="release-header">
+                    <div>
+                        <h3>@LatestRelease.Name</h3>
+                        <p class="release-meta">
+                            Released @LatestRelease.PublishedAt?.ToString("MMM dd, yyyy") · Windows x64
+                        </p>
+                    </div>
+                    @if (!string.IsNullOrEmpty(DownloadUrl))
+                    {
+                        <a href="@DownloadUrl" class="btn btn-primary btn-lg">⬇ Download ZIP</a>
+                    }
+                </div>
+                @if (!string.IsNullOrEmpty(LatestRelease.Body))
+                {
+                    <div class="release-notes">@LatestRelease.Body</div>
+                }
+                <div class="release-stats">
+                    <div>
+                        <span class="release-stat-value">@TotalDownloads</span>
+                        <span class="release-stat-label">Downloads</span>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="download-fallback">
+                    <p>No releases found yet. Build from source:</p>
+                    <pre><code>git clone https://github.com/@(Repo).git
+cd c-sharp
+dotnet build Pulse.slnx
+dotnet run --project Pulse.UI/Pulse.UI.csproj</code></pre>
+                </div>
+            }
+        </div>
+
+        @if (OlderReleases.Any())
+        {
+            <div class="releases-list">
+                @foreach (var release in OlderReleases)
+                {
+                    <div class="release-item">
+                        <div>
+                            <div class="release-item-name">@release.Name</div>
+                            <div class="release-item-meta">@release.PublishedAt?.ToString("MMM dd, yyyy")</div>
+                        </div>
+                        <a href="@release.HtmlUrl" class="btn btn-sm btn-outline" target="_blank">View</a>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</section>
+
+@code {
+    [Parameter] public string AppName { get; set; } = "Pulse";
+    [Parameter] public string Repo { get; set; } = "";
+    [Parameter] public bool IsLoading { get; set; }
+    [Parameter] public GitHubRelease? LatestRelease { get; set; }
+    [Parameter] public List<GitHubRelease> OlderReleases { get; set; } = new();
+    [Parameter] public string DownloadUrl { get; set; } = "";
+    [Parameter] public int TotalDownloads { get; set; }
+}

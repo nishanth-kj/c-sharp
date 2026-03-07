@@ -1,0 +1,26 @@
+@using site.Models
+
+<section class="section" id="features">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Features</span>
+            <h2>Everything you need to understand your productivity</h2>
+        </div>
+        <div class="features-grid">
+            @foreach (var feature in Items)
+            {
+                <div class="feature-card">
+                    <div class="feature-icon" style="background:@feature.AccentColor;color:@feature.IconColor;">
+                        @feature.Icon
+                    </div>
+                    <h3>@feature.Title</h3>
+                    <p>@feature.Description</p>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+@code {
+    [Parameter] public List<FeatureItem> Items { get; set; } = new();
+}
