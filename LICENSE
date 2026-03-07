@@ -1,0 +1,73 @@
+# Pulse — Non-Commercial Open Source License (NCOSL v1.0)
+
+Copyright (c) 2026 Nishanth KJ. All rights reserved.
+
+## Terms and Conditions
+
+### 1. Grant of License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to use,
+copy, modify, merge, and distribute the Software, subject to the following
+conditions:
+
+### 2. Non-Commercial Use Only
+
+The Software may be used **exclusively for non-commercial purposes**. 
+Non-commercial purposes include, but are not limited to:
+
+- Personal use
+- Educational use
+- Academic research
+- Open-source community projects
+
+### 3. Prohibited Commercial Use
+
+The following uses are **strictly prohibited** without prior written consent
+from the copyright holder:
+
+- Selling or licensing the Software for payment
+- Including the Software in any paid product or service
+- Using the Software as part of a Software-as-a-Service (SaaS) offering
+- Using the Software to generate revenue, directly or indirectly
+- Distributing the Software as part of any commercial package or bundle
+
+### 4. Redistribution
+
+Redistribution of the Software, with or without modification, is permitted
+provided that:
+
+- This license file is included in all copies or substantial portions
+- The original copyright notice is retained
+- The redistribution is for non-commercial purposes only
+- Modified versions are clearly marked as such
+
+### 5. Attribution
+
+All copies or substantial portions of the Software must include:
+
+- The original copyright notice
+- This license in its entirety
+- A link to the original repository: https://github.com/nishanth-kj/c-sharp
+
+### 6. No Warranty
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+### 7. Termination
+
+This license is automatically terminated if you violate any of its terms.
+Upon termination, you must destroy all copies of the Software in your
+possession.
+
+---
+
+**In plain language:** You are free to use, modify, and share Pulse for
+personal, educational, and non-commercial purposes. You may not sell it, 
+include it in paid products, or use it to make money.

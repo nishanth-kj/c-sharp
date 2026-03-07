@@ -1,0 +1,159 @@
+<UserControl x:Class="Pulse.UI.Pages.DashboardPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <StackPanel>
+
+            <!-- Page Title -->
+            <TextBlock Text="Dashboard" Style="{StaticResource PageTitle}" />
+
+            <!-- Stats Cards Row -->
+            <UniformGrid Columns="4" Margin="0,0,0,16">
+                <!-- Total Screen Time -->
+                <Border Style="{StaticResource CardStyle}">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                            <materialDesign:PackIcon Kind="MonitorEye" Width="24" Height="24" Foreground="#7C4DFF" />
+                            <TextBlock Text="Screen Time" FontSize="12" Foreground="#888" Margin="8,0,0,0" VerticalAlignment="Center" />
+                        </StackPanel>
+                        <TextBlock Text="{Binding TotalScreenTime}" FontSize="32" FontWeight="Bold" Foreground="White" />
+                        <TextBlock Text="today" FontSize="11" Foreground="#555" />
+                    </StackPanel>
+                </Border>
+                <!-- Productive -->
+                <Border Style="{StaticResource CardStyle}">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                            <materialDesign:PackIcon Kind="CheckCircle" Width="24" Height="24" Foreground="#4CAF50" />
+                            <TextBlock Text="Productive" FontSize="12" Foreground="#888" Margin="8,0,0,0" VerticalAlignment="Center" />
+                        </StackPanel>
+                        <TextBlock Text="{Binding ProductiveTime}" FontSize="32" FontWeight="Bold" Foreground="#4CAF50" />
+                    </StackPanel>
+                </Border>
+                <!-- Distracting -->
+                <Border Style="{StaticResource CardStyle}">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                            <materialDesign:PackIcon Kind="AlertCircle" Width="24" Height="24" Foreground="#F44336" />
+                            <TextBlock Text="Distracting" FontSize="12" Foreground="#888" Margin="8,0,0,0" VerticalAlignment="Center" />
+                        </StackPanel>
+                        <TextBlock Text="{Binding DistractingTime}" FontSize="32" FontWeight="Bold" Foreground="#F44336" />
+                    </StackPanel>
+                </Border>
+                <!-- Productivity Score -->
+                <Border Style="{StaticResource CardStyle}">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                            <materialDesign:PackIcon Kind="TrendingUp" Width="24" Height="24" Foreground="#00BFA5" />
+                            <TextBlock Text="Score" FontSize="12" Foreground="#888" Margin="8,0,0,0" VerticalAlignment="Center" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding ProductivityScore}" FontSize="32" FontWeight="Bold" Foreground="#00BFA5" />
+                            <TextBlock Text="%" FontSize="18" Foreground="#00BFA5" VerticalAlignment="Bottom" Margin="2,0,0,6" />
+                        </StackPanel>
+                        <TextBlock Text="{Binding AppsUsed, StringFormat='{}{0} apps tracked'}" FontSize="11" Foreground="#555" />
+                    </StackPanel>
+                </Border>
+            </UniformGrid>
+
+            <!-- Charts Row -->
+            <Grid Margin="0,0,0,16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Top Apps Chart -->
+                <Border Grid.Column="0" Style="{StaticResource CardStyle}">
+                    <StackPanel>
+                        <TextBlock Text="Top Applications" FontSize="16" FontWeight="SemiBold" Foreground="White" Margin="0,0,0,12" />
+                        <lvc:CartesianChart Series="{Binding TopAppsSeries}" Height="220"
+                                            TooltipTextPaint="{x:Null}"
+                                            ZoomMode="None" />
+                    </StackPanel>
+                </Border>
+
+                <!-- Hourly Activity -->
+                <Border Grid.Column="1" Style="{StaticResource CardStyle}">
+                    <StackPanel>
+                        <TextBlock Text="Hourly Activity" FontSize="16" FontWeight="SemiBold" Foreground="White" Margin="0,0,0,12" />
+                        <lvc:CartesianChart Series="{Binding HourlySeries}" Height="220"
+                                            XAxes="{Binding HourlyXAxes}"
+                                            YAxes="{Binding HourlyYAxes}"
+                                            ZoomMode="None" />
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <!-- Goals Progress -->
+            <Border Style="{StaticResource CardStyle}" Margin="8,0,8,16">
+                <StackPanel>
+                    <TextBlock Text="Goal Progress" FontSize="16" FontWeight="SemiBold" Foreground="White" Margin="0,0,0,16" />
+                    <ItemsControl ItemsSource="{Binding GoalProgress}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border Background="#252540" CornerRadius="12" Padding="16,12" Margin="0,0,0,10">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Grid.Column="0">
+                                            <TextBlock Text="{Binding Title}" FontSize="14" FontWeight="SemiBold" Foreground="White" />
+                                            <ProgressBar Value="{Binding ProgressPercent}" Height="8" Margin="0,8,24,0"
+                                                         materialDesign:TransitionAssist.DisableTransitions="True"
+                                                         Foreground="#7C4DFF" Background="#333350" />
+                                            <TextBlock Margin="0,6,0,0" FontSize="11" Foreground="#888">
+                                                <TextBlock.Text>
+                                                    <MultiBinding StringFormat="{}{0:0}% — {1:hh\:mm} / {2:hh\:mm}">
+                                                        <Binding Path="ProgressPercent" />
+                                                        <Binding Path="CurrentDuration" />
+                                                        <Binding Path="TargetDuration" />
+                                                    </MultiBinding>
+                                                </TextBlock.Text>
+                                            </TextBlock>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">
+                                            <TextBlock FontSize="20" FontWeight="Bold" HorizontalAlignment="Center">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Foreground" Value="#F44336" />
+                                                        <Setter Property="Text" Value="✗" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding IsMetToday}" Value="True">
+                                                                <Setter Property="Foreground" Value="#4CAF50" />
+                                                                <Setter Property="Text" Value="✓" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                            <TextBlock Text="{Binding CurrentStreak, StringFormat='🔥 {0}'}" FontSize="11" Foreground="#888" HorizontalAlignment="Center" />
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    <TextBlock Text="No goals set. Go to Goals to create one!"
+                               FontSize="13" Foreground="#555" HorizontalAlignment="Center" Margin="0,8,0,0">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding GoalProgress.Count}" Value="0">
+                                        <Setter Property="Visibility" Value="Visible" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
