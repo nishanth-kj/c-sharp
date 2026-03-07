@@ -1,0 +1,57 @@
+@using site.Models
+
+<section class="hero">
+    <div class="hero-glow"></div>
+    <div class="container hero-content">
+        <div class="hero-badge">
+            <span class="badge-dot"></span>
+            @Config.HeroBadge
+        </div>
+        <h1 class="hero-title">
+            Take Control of<br>
+            Your <span class="gradient-text">Screen Time</span>
+        </h1>
+        <p class="hero-subtitle">@Config.HeroSubtitle</p>
+        <div class="hero-buttons">
+            <a href="#download" class="btn btn-primary btn-lg">⬇ Download Now</a>
+            <a href="@Config.GithubUrl" class="btn btn-glass btn-lg" target="_blank">⭐ View Source</a>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat">
+                <span class="stat-value">@FormatNumber(Stars)</span>
+                <span class="stat-label">Stars</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <span class="stat-value">@FormatNumber(Forks)</span>
+                <span class="stat-label">Forks</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <span class="stat-value">@FormatNumber(Downloads)</span>
+                <span class="stat-label">Downloads</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <span class="stat-value">@Version</span>
+                <span class="stat-label">Latest</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+@code {
+    [Parameter] public SiteConfig Config { get; set; } = new();
+    [Parameter] public int Stars { get; set; }
+    [Parameter] public int Forks { get; set; }
+    [Parameter] public int Downloads { get; set; }
+    [Parameter] public string Version { get; set; } = "—";
+
+    private string FormatNumber(int n) => n switch
+    {
+        >= 1_000_000 => $"{n / 1_000_000.0:0.#}M",
+        >= 1_000 => $"{n / 1_000.0:0.#}K",
+        _ => n.ToString()
+    };
+}

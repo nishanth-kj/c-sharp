@@ -1,0 +1,35 @@
+@using site.Models
+
+<section class="section section-dark" id="architecture">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Architecture</span>
+            <h2>Built with Clean Architecture in .NET 10</h2>
+        </div>
+        <div class="arch-grid">
+            @for (int i = 0; i < Data.Layers.Count; i++)
+            {
+                var layer = Data.Layers[i];
+                <div class="arch-card">
+                    <div class="arch-num">@layer.Number</div>
+                    <h4>@layer.Name</h4>
+                    <p>@layer.Description</p>
+                </div>
+                @if (i < Data.Layers.Count - 1)
+                {
+                    <div class="arch-line">→</div>
+                }
+            }
+        </div>
+        <div class="tech-grid">
+            @foreach (var tech in Data.TechStack)
+            {
+                <span class="tech-pill">@tech</span>
+            }
+        </div>
+    </div>
+</section>
+
+@code {
+    [Parameter] public ArchitectureData Data { get; set; } = new();
+}

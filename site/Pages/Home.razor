@@ -1,0 +1,84 @@
+﻿@page "/"
+@using site.Models
+@using site.Components
+@using site.Utils
+@inject HttpClient Http
+@inject Api GitHubApi
+
+<Navbar Config="@config" />
+
+<Hero Config="@config"
+      Stars="@stars"
+      Forks="@forks"
+      Downloads="@downloads"
+      Version="@latestVersion" />
+
+<Features Items="@features" />
+
+<Architecture Data="@archData" />
+
+<Download AppName="@config.AppName"
+          Repo="@config.Repo"
+          IsLoading="@isLoading"
+          LatestRelease="@latestRelease"
+          OlderReleases="@olderReleases"
+          DownloadUrl="@downloadUrl"
+          TotalDownloads="@downloads" />
+
+<CallToAction Config="@config" />
+
+<Footer Config="@config" />
+
+@code {
+    private SiteConfig config = new();
+    private List<FeatureItem> features = new();
+    private ArchitectureData archData = new();
+
+    private int stars, forks, downloads;
+    private string latestVersion = "—";
+    private bool isLoading = true;
+    private string downloadUrl = "";
+    private GitHubRelease? latestRelease;
+    private List<GitHubRelease> olderReleases = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Load JSON data from wwwroot/data/ (local static files)
+        config = await Http.GetFromJsonAsync<SiteConfig>("data/site-config.json") ?? new();
+        features = await Http.GetFromJsonAsync<List<FeatureItem>>("data/features.json") ?? new();
+        archData = await Http.GetFromJsonAsync<ArchitectureData>("data/architecture.json") ?? new();
+
+        // Load live GitHub stats using the Api utility class
+        await Task.WhenAll(LoadRepoStats(), LoadReleases());
+        isLoading = false;
+    }
+
+    private async Task LoadRepoStats()
+    {
+        var repo = await GitHubApi.GetAsync<GitHubRepo>($"/repos/{config.Repo}");
+        if (repo != null)
+        {
+            stars = repo.StargazersCount;
+            forks = repo.ForksCount;
+        }
+    }
+
+    private async Task LoadReleases()
+    {
+        var releases = await GitHubApi.GetAsync<List<GitHubRelease>>($"/repos/{config.Repo}/releases");
+        if (releases != null && releases.Any())
+        {
+            latestRelease = releases[0];
+            latestVersion = latestRelease.TagName ?? "—";
+            olderReleases = releases.Skip(1).Take(5).ToList();
+            downloads = releases
+                .SelectMany(r => r.Assets ?? new())
+                .Sum(a => a.DownloadCount);
+            downloadUrl = latestRelease.Assets?.FirstOrDefault()?.BrowserDownloadUrl ?? "";
+        }
+        else
+        {
+            latestVersion = "dev";
+        }
+    }
+}

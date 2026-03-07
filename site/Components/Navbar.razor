@@ -1,0 +1,20 @@
+@using site.Models
+
+<nav class="navbar">
+    <div class="container nav-inner">
+        <a href="#" class="logo">
+            <span class="logo-icon">⚡</span>
+            <span class="logo-text">@Config.AppName</span>
+        </a>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#architecture">Architecture</a>
+            <a href="#download">Download</a>
+            <a href="@Config.GithubUrl" class="btn btn-sm btn-outline" target="_blank">GitHub</a>
+        </div>
+    </div>
+</nav>
+
+@code {
+    [Parameter] public SiteConfig Config { get; set; } = new();
+}

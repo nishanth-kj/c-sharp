@@ -1,0 +1,16 @@
+{
+  "appName": "Pulse",
+  "tagline": "Desktop Activity Manager",
+  "heroTitle": "Take Control of Your Screen Time",
+  "heroSubtitle": "Pulse automatically tracks which applications you use, helps you set productivity goals, and generates beautiful reports — all without your data ever leaving your machine.",
+  "heroBadge": "Open Source · 100% Offline · Privacy First",
+  "repo": "nishanth-kj/c-sharp",
+  "githubUrl": "https://github.com/nishanth-kj/c-sharp",
+  "docsUrl": "https://github.com/nishanth-kj/c-sharp/blob/main/docs/getting-started.md",
+  "changelogUrl": "https://github.com/nishanth-kj/c-sharp/blob/main/CHANGELOG.md",
+  "licenseUrl": "https://github.com/nishanth-kj/c-sharp/blob/main/LICENSE",
+  "releasesUrl": "https://github.com/nishanth-kj/c-sharp/releases",
+  "ctaTitle": "Ready to own your productivity?",
+  "ctaSubtitle": "Download Pulse, set your first goal, and start building better habits today.",
+  "footerText": "Open Source · Non-Commercial License · Built with .NET 10"
+}
