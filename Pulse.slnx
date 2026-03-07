@@ -1,0 +1,7 @@
+<Solution>
+  <!-- Pulse — Desktop Activity Manager -->
+  <Project Path="Pulse.Domain/Pulse.Domain.csproj" />
+  <Project Path="Pulse.Application/Pulse.Application.csproj" />
+  <Project Path="Pulse.Infrastructure/Pulse.Infrastructure.csproj" />
+  <Project Path="Pulse.UI/Pulse.UI.csproj" />
+</Solution>
