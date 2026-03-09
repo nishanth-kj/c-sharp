@@ -2,7 +2,7 @@
 
 ## Real-Time Activity Tracking
 
-Pulse automatically monitors which application you are using at any given time.
+SharpIB automatically monitors which application you are using at any given time.
 
 **How it works:**
 
@@ -16,7 +16,7 @@ Pulse automatically monitors which application you are using at any given time.
 | Data Point | Example |
 |---|---|
 | Process Name | `devenv`, `chrome`, `code` |
-| Window Title | `MainWindow.xaml — Pulse` |
+| Window Title | `MainWindow.xaml — SharpIB` |
 | Executable Path | `C:\Program Files\...\devenv.exe` |
 | Start Time | `2026-03-07 14:32:15` |
 | End Time | `2026-03-07 14:45:08` |
@@ -58,7 +58,7 @@ Displays all active goals with:
 
 ## Application Manager
 
-A comprehensive list of every application Pulse has tracked.
+A comprehensive list of every application SharpIB has tracked.
 
 ### Features
 
@@ -149,13 +149,13 @@ A ranked table of all applications used in the selected period, showing:
 All data is stored in a local SQLite database:
 
 ```
-%LOCALAPPDATA%\Pulse\pulse.db
+%LOCALAPPDATA%\SharpIB\SharpIB.db
 ```
 
 ### Network Activity
 
-Pulse makes **zero network requests**. There is no telemetry, no analytics, no crash reporting, and no update checking.
+SharpIB makes **zero network requests**. There is no telemetry, no analytics, no crash reporting, and no update checking.
 
 ### Data You Control
 
-You can delete the entire database at any time by removing the `pulse.db` file. The application will recreate an empty database on next launch.
+You can delete the entire database at any time by removing the `SharpIB.db` file. The application will recreate an empty database on next launch.

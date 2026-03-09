@@ -1,4 +1,4 @@
-@using site.Models
+﻿@using site.Models
 
 <section class="section" id="download">
     <div class="container">
@@ -20,12 +20,12 @@
                     <div>
                         <h3>@LatestRelease.Name</h3>
                         <p class="release-meta">
-                            Released @LatestRelease.PublishedAt?.ToString("MMM dd, yyyy") · Windows x64
+                            Released @LatestRelease.PublishedAt?.ToString("MMM dd, yyyy") Â· Windows x64
                         </p>
                     </div>
                     @if (!string.IsNullOrEmpty(DownloadUrl))
                     {
-                        <a href="@DownloadUrl" class="btn btn-primary btn-lg">⬇ Download ZIP</a>
+                        <a href="@DownloadUrl" class="btn btn-primary btn-lg">â¬‡ Download ZIP</a>
                     }
                 </div>
                 @if (!string.IsNullOrEmpty(LatestRelease.Body))
@@ -45,8 +45,8 @@
                     <p>No releases found yet. Build from source:</p>
                     <pre><code>git clone https://github.com/@(Repo).git
 cd c-sharp
-dotnet build Pulse.slnx
-dotnet run --project Pulse.UI/Pulse.UI.csproj</code></pre>
+dotnet build SharpIB.slnx
+dotnet run --project SharpIB.UI/SharpIB.UI.csproj</code></pre>
                 </div>
             }
         </div>
@@ -70,7 +70,7 @@ dotnet run --project Pulse.UI/Pulse.UI.csproj</code></pre>
 </section>
 
 @code {
-    [Parameter] public string AppName { get; set; } = "Pulse";
+    [Parameter] public string AppName { get; set; } = "SharpIB";
     [Parameter] public string Repo { get; set; } = "";
     [Parameter] public bool IsLoading { get; set; }
     [Parameter] public GitHubRelease? LatestRelease { get; set; }
@@ -78,3 +78,4 @@ dotnet run --project Pulse.UI/Pulse.UI.csproj</code></pre>
     [Parameter] public string DownloadUrl { get; set; } = "";
     [Parameter] public int TotalDownloads { get; set; }
 }
+

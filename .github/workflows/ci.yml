@@ -20,14 +20,14 @@ jobs:
         dotnet-version: '10.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore Pulse.slnx
+      run: dotnet restore SharpIB.slnx
 
     - name: Build
-      run: dotnet build Pulse.slnx --no-restore --configuration Release
+      run: dotnet build SharpIB.slnx --no-restore --configuration Release
 
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: pulse-build
-        path: Pulse.UI/bin/Release/
+        name: sharpib-build
+        path: SharpIB.UI/bin/Release/
         retention-days: 7

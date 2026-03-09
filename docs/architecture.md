@@ -1,21 +1,21 @@
 # Architecture
 
-Pulse is built using **Clean Architecture** with strict separation of concerns. Each layer has a defined responsibility and can only depend on layers below it.
+SharpIB is built using **Clean Architecture** with strict separation of concerns. Each layer has a defined responsibility and can only depend on layers below it.
 
 ## Layer Diagram
 
 ```
 ┌──────────────────────────────────────┐
-│            Pulse.UI (WPF)            │  ← Presentation
+│            SharpIB.UI (WPF)            │  ← Presentation
 │  Pages, ViewModels, XAML, DI Setup   │
 ├──────────────────────────────────────┤
-│         Pulse.Infrastructure         │  ← Data Access
+│         SharpIB.Infrastructure         │  ← Data Access
 │  EF Core, SQLite, Win32 P/Invoke     │
 ├──────────────────────────────────────┤
-│          Pulse.Application           │  ← Business Logic
+│          SharpIB.Application           │  ← Business Logic
 │  CQRS Commands/Queries, DTOs        │
 ├──────────────────────────────────────┤
-│            Pulse.Domain              │  ← Core
+│            SharpIB.Domain              │  ← Core
 │  Entities, Enums, Interfaces         │
 └──────────────────────────────────────┘
 ```
@@ -94,7 +94,7 @@ Implements persistence and platform-specific services.
 
 - **ORM:** Entity Framework Core
 - **Provider:** SQLite (file-based, zero-config)
-- **Location:** `%LOCALAPPDATA%/Pulse/pulse.db`
+- **Location:** `%LOCALAPPDATA%/SharpIB/SharpIB.db`
 - **Schema:** Auto-created via `EnsureCreated()` on startup
 
 ### Win32 Active Window Service

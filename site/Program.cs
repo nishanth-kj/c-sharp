@@ -13,7 +13,7 @@ var baseUrl = builder.Configuration["ApiSettings:BaseUrl"] ?? "https://api.githu
 builder.Services.AddScoped(sp =>
 {
     var client = new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) };
-    client.DefaultRequestHeaders.Add("User-Agent", "Pulse-Site");
+    client.DefaultRequestHeaders.Add("User-Agent", "SharpIB-Site");
     return client;
 });
 
@@ -25,3 +25,4 @@ builder.Services.AddScoped(sp =>
 });
 
 await builder.Build().RunAsync();
+

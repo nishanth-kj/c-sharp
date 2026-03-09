@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: Report a bug to help us improve Pulse
+about: Report a bug to help us improve SharpIB
 title: "[BUG] "
 labels: bug
 assignees: ""
@@ -32,7 +32,7 @@ If applicable, add screenshots to help explain your problem.
 
 - **OS:** Windows [version]
 - **.NET Version:** [e.g., 10.0]
-- **Pulse Version:** [e.g., 1.0.0]
+- **SharpIB Version:** [e.g., 1.0.0]
 
 ## Additional Context
 

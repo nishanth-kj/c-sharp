@@ -1,5 +1,5 @@
 # ========================
-# Pulse — .gitignore
+# SharpIB — .gitignore
 # ========================
 
 # Build output
@@ -75,3 +75,4 @@ $RECYCLE.BIN/
 
 # Publish output
 publish/
+release/

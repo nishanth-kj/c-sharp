@@ -23,7 +23,7 @@ Closes #(issue number)
 
 Describe the tests you ran to verify your changes.
 
-- [ ] Builds successfully (`dotnet build Pulse.slnx`)
+- [ ] Builds successfully (`dotnet build SharpIB.slnx`)
 - [ ] Existing functionality works as expected
 - [ ] New functionality has been tested
 

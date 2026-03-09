@@ -1,8 +1,8 @@
 {
-  "appName": "Pulse",
-  "tagline": "Desktop Activity Manager",
-  "heroTitle": "Take Control of Your Screen Time",
-  "heroSubtitle": "Pulse automatically tracks which applications you use, helps you set productivity goals, and generates beautiful reports — all without your data ever leaving your machine.",
+  "appName": "SharpIB",
+  "tagline": "Invoice and Bill Application",
+  "heroTitle": "Manage Your Invoicing Locally",
+  "heroSubtitle": "SharpIB helps you create professional invoices, manage customers, and calculate taxes — all securely stored on your own machine. No cloud subscriptions.",
   "heroBadge": "Open Source · 100% Offline · Privacy First",
   "repo": "nishanth-kj/c-sharp",
   "githubUrl": "https://github.com/nishanth-kj/c-sharp",
@@ -10,7 +10,7 @@
   "changelogUrl": "https://github.com/nishanth-kj/c-sharp/blob/main/CHANGELOG.md",
   "licenseUrl": "https://github.com/nishanth-kj/c-sharp/blob/main/LICENSE",
   "releasesUrl": "https://github.com/nishanth-kj/c-sharp/releases",
-  "ctaTitle": "Ready to own your productivity?",
-  "ctaSubtitle": "Download Pulse, set your first goal, and start building better habits today.",
+  "ctaTitle": "Ready to own your billing data?",
+  "ctaSubtitle": "Download SharpIB, create your first client profile, and generate a professional invoice today.",
   "footerText": "Open Source · Non-Commercial License · Built with .NET 10"
 }
