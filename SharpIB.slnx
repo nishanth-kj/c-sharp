@@ -4,5 +4,5 @@
   <Project Path="SharpIB.Application/SharpIB.Application.csproj" />
   <Project Path="SharpIB.Infrastructure/SharpIB.Infrastructure.csproj" />
   <Project Path="SharpIB.UI/SharpIB.UI.csproj" />
-  <Project Path="Site/site.csproj" />
+  <Project Path="site/site.csproj" />
 </Solution>
