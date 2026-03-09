@@ -33,13 +33,16 @@ jobs:
           -r win-x64 `
           --self-contained true `
           -p:PublishSingleFile=true `
-          -o ./release/desktop
+          -p:IncludeNativeLibrariesForSelfExtract=true `
+          -o "${{ runner.temp }}\publish"
 
     - name: Compile Inno Setup Installer
-      run: '& "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "inno.iss"'
+      run: '& "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "/dSourceDir=${{ runner.temp }}\publish" "/dOutputDir=${{ runner.temp }}\release" "inno.iss"'
 
     - name: Create ZIP
-      run: Compress-Archive -Path ./release/desktop/* -DestinationPath ./SharpIB-${{ github.ref_name }}-win-x64.zip
+      run: |
+        New-Item -ItemType Directory -Force -Path "${{ runner.temp }}\release"
+        Compress-Archive -Path "${{ runner.temp }}\publish\*" -DestinationPath "${{ runner.temp }}\release\SharpIB-${{ github.ref_name }}-win-x64.zip"
 
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v2
@@ -57,7 +60,7 @@ jobs:
 
           See [CHANGELOG.md](https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md) for details.
         files: |
-          SharpIB-${{ github.ref_name }}-win-x64.zip
-          release/SharpIB-Setup-win-x64.exe
+          ${{ runner.temp }}/release/SharpIB-${{ github.ref_name }}-win-x64.zip
+          ${{ runner.temp }}/release/SharpIB-Setup-win-x64.exe
         generate_release_notes: true
 
