@@ -41,7 +41,7 @@ public class Api
         // Set default headers
         if (!_http.DefaultRequestHeaders.Contains("User-Agent"))
         {
-            _http.DefaultRequestHeaders.Add("User-Agent", "Pulse-Site");
+            _http.DefaultRequestHeaders.Add("User-Agent", "SharpIB-Site");
         }
     }
 
@@ -237,3 +237,4 @@ public class Api
         return $"{_baseUrl}/{endpoint.TrimStart('/')}";
     }
 }
+

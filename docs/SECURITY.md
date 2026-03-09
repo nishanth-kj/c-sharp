@@ -8,7 +8,7 @@
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability in Pulse, please report it responsibly.
+If you discover a security vulnerability in SharpIB, please report it responsibly.
 
 ### How to Report
 
@@ -28,7 +28,7 @@ If you discover a security vulnerability in Pulse, please report it responsibly.
 
 ## Scope
 
-Since Pulse runs entirely locally with no network access, the primary security concerns are:
+Since SharpIB runs entirely locally with no network access, the primary security concerns are:
 
 - **Local data exposure** — The SQLite database contains app usage history
 - **Win32 API misuse** — The P/Invoke calls should only read window titles and process names
@@ -36,7 +36,7 @@ Since Pulse runs entirely locally with no network access, the primary security c
 
 ## Data Privacy
 
-Pulse does not:
+SharpIB does not:
 - Make any network requests
 - Send telemetry or analytics
 - Access file contents, keystrokes, or clipboard data

@@ -1,6 +1,6 @@
-# Pulse — Documentation
+# SharpIB — Documentation
 
-Welcome to the Pulse documentation. This guide covers everything you need to know about the project.
+Welcome to the SharpIB documentation. This guide covers everything you need to know about the project.
 
 ## Table of Contents
 

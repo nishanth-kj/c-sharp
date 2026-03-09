@@ -1,6 +1,6 @@
-# Pulse Landing Page
+﻿# SharpIBIB Landing Page
 
-This directory contains the source code for the official Pulse Desktop Activity Manager landing page.
+This directory contains the source code for the official SharpIBIB Desktop Activity Manager landing page.
 
 Built with **.NET 10 Blazor WebAssembly Standalone**, this project compiles to a set of pure static files (HTML, CSS, WebAssembly, and JavaScript) that can be hosted on any static file server like GitHub Pages.
 
@@ -60,3 +60,4 @@ The resulting `publish/wwwroot/` folder will contain everything needed to host t
 
 ### GitHub Actions Deployment
 The repository is configured with a GitHub Actions workflow (`.github/workflows/release.yml`) that automatically builds and deploys this site to GitHub Pages whenever a new version tag (e.g., `v1.0.0`) is pushed. The workflow includes a step to add a `.nojekyll` file, ensuring GitHub Pages correctly serves the `_framework/` directories required by Blazor WASM.
+

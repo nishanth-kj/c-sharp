@@ -1,6 +1,6 @@
-# Contributing to Pulse
+# Contributing to SharpIB
 
-Thank you for your interest in contributing to Pulse! This document provides guidelines for contributing.
+Thank you for your interest in contributing to SharpIB! This document provides guidelines for contributing.
 
 ## Getting Started
 
@@ -12,8 +12,8 @@ Thank you for your interest in contributing to Pulse! This document provides gui
 3. Make your changes
 4. Build and test:
    ```bash
-   dotnet build Pulse.slnx
-   dotnet run --project Pulse.UI/Pulse.UI.csproj
+   dotnet build SharpIB.slnx
+   dotnet run --project SharpIB.UI/SharpIB.UI.csproj
    ```
 5. Commit your changes and push to your fork
 6. Open a Pull Request
@@ -26,14 +26,14 @@ Thank you for your interest in contributing to Pulse! This document provides gui
 
 ## Architecture
 
-Pulse follows **Clean Architecture** with 4 layers:
+SharpIB follows **Clean Architecture** with 4 layers:
 
 | Layer | What to modify |
 |---|---|
-| `Pulse.Domain` | Entities, enums, repository interfaces |
-| `Pulse.Application` | CQRS commands/queries, DTOs, service interfaces |
-| `Pulse.Infrastructure` | Database, Win32 tracking, repository implementations |
-| `Pulse.UI` | WPF pages, ViewModels, XAML |
+| `SharpIB.Domain` | Entities, enums, repository interfaces |
+| `SharpIB.Application` | CQRS commands/queries, DTOs, service interfaces |
+| `SharpIB.Infrastructure` | Database, Win32 tracking, repository implementations |
+| `SharpIB.UI` | WPF pages, ViewModels, XAML |
 
 ## Guidelines
 

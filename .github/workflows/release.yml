@@ -24,11 +24,11 @@ jobs:
         dotnet-version: '10.0.x'
 
     - name: Restore
-      run: dotnet restore Pulse.slnx
+      run: dotnet restore SharpIB.slnx
 
     - name: Publish App (self-contained)
       run: |
-        dotnet publish Pulse.UI/Pulse.UI.csproj `
+        dotnet publish SharpIB.UI/SharpIB.UI.csproj `
           -c Release `
           -r win-x64 `
           --self-contained true `
@@ -37,23 +37,23 @@ jobs:
           -o ./publish
 
     - name: Create ZIP
-      run: Compress-Archive -Path ./publish/* -DestinationPath ./Pulse-${{ github.ref_name }}-win-x64.zip
+      run: Compress-Archive -Path ./publish/* -DestinationPath ./SharpIB-${{ github.ref_name }}-win-x64.zip
 
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v2
       with:
-        name: Pulse ${{ github.ref_name }}
+        name: SharpIB ${{ github.ref_name }}
         body: |
-          ## Pulse ${{ github.ref_name }}
+          ## SharpIB ${{ github.ref_name }}
 
           ### Download
-          Download the ZIP, extract, and run `Pulse.UI.exe`.
+          Download the ZIP, extract, and run `SharpIB.UI.exe`.
 
           ### Requirements
           - Windows 10 or later (x64)
           - No .NET installation required (self-contained)
 
           See [CHANGELOG.md](https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md) for details.
-        files: Pulse-${{ github.ref_name }}-win-x64.zip
+        files: SharpIB-${{ github.ref_name }}-win-x64.zip
         generate_release_notes: true
 

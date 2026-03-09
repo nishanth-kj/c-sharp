@@ -1,6 +1,6 @@
 ---
 name: Feature Request
-about: Suggest a new feature for Pulse
+about: Suggest a new feature for SharpIB
 title: "[FEATURE] "
 labels: enhancement
 assignees: ""

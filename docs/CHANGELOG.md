@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Productivity goals with Target/Limit types and streak tracking
 - Reports page with date-range analytics, trend charts, category pie chart
 - Material Design dark theme (DeepPurple/Teal)
-- SQLite local database (auto-created at %LOCALAPPDATA%/Pulse/)
+- SQLite local database (auto-created at %LOCALAPPDATA%/SharpIB/)
 - GitHub Pages landing site with dynamic release downloads
 - Full project documentation in docs/
 - GitHub templates for issues, PRs, bugs, and feature requests

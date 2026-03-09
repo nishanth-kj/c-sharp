@@ -18,20 +18,23 @@ git clone https://github.com/nishanth-kj/c-sharp.git
 cd c-sharp
 
 # 2. Restore NuGet packages
-dotnet restore Pulse.slnx
+dotnet restore SharpIB.slnx
 
 # 3. Build the solution
-dotnet build Pulse.slnx
+dotnet build SharpIB.slnx
 
-# 4. Run the application
-dotnet run --project Pulse.UI/Pulse.UI.csproj
+# 4. Run the Desktop Application
+dotnet run --project SharpIB.UI/SharpIB.UI.csproj
+
+# (Optional) Run the Site locally
+dotnet run --project Site/site.csproj
 ```
 
 ### First Launch
 
-On first launch, Pulse will:
+On first launch, SharpIB will:
 
-1. **Create the database** — A SQLite database is automatically created at `%LOCALAPPDATA%/Pulse/pulse.db`
+1. **Create the database** — A SQLite database is automatically created at `%LOCALAPPDATA%/SharpIB/SharpIB.db`
 2. **Seed default categories** — Three categories are pre-configured:
    - Productive (green)
    - Neutral (grey)
@@ -42,9 +45,9 @@ On first launch, Pulse will:
 
 ### Database Location
 
-Default: `%LOCALAPPDATA%/Pulse/pulse.db`
+Default: `%LOCALAPPDATA%/SharpIB/SharpIB.db`
 
-This path is set in `Pulse.UI/App.xaml.cs` and can be modified before building.
+This path is set in `SharpIB.UI/App.xaml.cs` and can be modified before building.
 
 ### Tracking Interval
 

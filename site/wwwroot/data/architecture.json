@@ -1,35 +1,18 @@
-{
-    "layers": [
-        {
-            "number": 1,
-            "name": "Pulse.Domain",
-            "description": "Core entities, enums, and repository interfaces."
-        },
-        {
-            "number": 2,
-            "name": "Pulse.Application",
-            "description": "CQRS commands and queries via MediatR."
-        },
-        {
-            "number": 3,
-            "name": "Pulse.Infrastructure",
-            "description": "EF Core + SQLite. Win32 P/Invoke tracking."
-        },
-        {
-            "number": 4,
-            "name": "Pulse.UI",
-            "description": "WPF with Material Design and LiveCharts."
-        }
-    ],
-    "techStack": [
-        ".NET 10",
-        "C# 13",
-        "WPF",
-        "EF Core",
-        "SQLite",
-        "MediatR",
-        "Material Design",
-        "LiveCharts",
-        "Win32 P/Invoke"
-    ]
-}
+[
+    {
+        "layer": "Presentation Layer (WPF)",
+        "description": "A modern, highly responsive desktop UI built with WPF utilizing Material Design for a beautiful invoicing experience."
+    },
+    {
+        "layer": "Application Layer (MediatR)",
+        "description": "Follows CQRS principles to encapsulate billing commands (e.g., CreateInvoice) and queries (e.g., GetCustomerBalance) independently."
+    },
+    {
+        "layer": "Domain Layer",
+        "description": "The core of the application housing fundamental billing entities like Invoices, LineItems, and Customers, entirely decoupled from UI and Storage."
+    },
+    {
+        "layer": "Infrastructure Layer (EF Core & SQLite)",
+        "description": "Manages persistent storage using a local, zero-configuration SQLite database via Entity Framework Core, ensuring 100% offline privacy."
+    }
+]

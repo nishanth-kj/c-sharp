@@ -1,44 +1,32 @@
 [
     {
-        "icon": "🖥️",
-        "title": "Real-Time Tracking",
-        "description": "Automatically detects the active window every 3 seconds using Win32 APIs. No manual input needed.",
-        "accentColor": "rgba(124,77,255,0.12)",
-        "iconColor": "#7C4DFF"
+        "title": "Professional Invoicing",
+        "description": "Create customizable invoices with automatic calculation of line items, taxes, and totals in seconds.",
+        "icon": "FileDocumentOutline"
     },
     {
-        "icon": "🎯",
-        "title": "Productivity Goals",
-        "description": "Set daily targets or limits. Track progress with visual bars and build streaks over consecutive days.",
-        "accentColor": "rgba(0,191,165,0.12)",
-        "iconColor": "#00BFA5"
+        "title": "Client Management",
+        "description": "Store all your customer details locally to auto-fill invoices and manage multiple clients effortlessly.",
+        "icon": "AccountGroupOutline"
     },
     {
-        "icon": "📈",
-        "title": "Live Dashboard",
-        "description": "Today's screen time, top apps chart, hourly activity heatmap, and real-time productivity score.",
-        "accentColor": "rgba(76,175,80,0.12)",
-        "iconColor": "#4CAF50"
+        "title": "Local SQLite Database",
+        "description": "Your financial data never touches the cloud. Everything is securely saved on your own machine using a robust local database.",
+        "icon": "DatabaseOutline"
     },
     {
-        "icon": "🏷️",
-        "title": "App Categorization",
-        "description": "Classify apps as Productive, Neutral, or Distracting. Auto-applies to all future sessions.",
-        "accentColor": "rgba(255,152,0,0.12)",
-        "iconColor": "#FF9800"
+        "title": "Tax Calculations",
+        "description": "Easily configure custom tax rates and let SharpIB handle the complex math for every client automatically.",
+        "icon": "Calculator"
     },
     {
-        "icon": "📊",
-        "title": "Reports & Analytics",
-        "description": "Daily, weekly, monthly reports with trend lines, category breakdowns, and ranked app tables.",
-        "accentColor": "rgba(233,30,99,0.12)",
-        "iconColor": "#E91E63"
+        "title": "PDF & Print Export",
+        "description": "Generate print-ready PDFs of your invoices directly from the desktop interface, ready to send to clients.",
+        "icon": "PrinterOutline"
     },
     {
-        "icon": "🔒",
-        "title": "100% Private",
-        "description": "All data stored locally in SQLite. Zero network requests. Your data never leaves your machine.",
-        "accentColor": "rgba(255,255,255,0.06)",
-        "iconColor": "#ffffff"
+        "title": "Open Source",
+        "description": "Built transparently on .NET 10 WPF. Inspect the code yourself, compile it locally, and own your billing fully.",
+        "icon": "ShieldCheckOutline"
     }
 ]
